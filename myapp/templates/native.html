@@ -6,10 +6,12 @@
 </head>
 <body>
         <h2>Native Registration</h2>
-        <form action="" method="post" >
-            {% csrf_token %}
+        <form enctype="multipart/form-data" action="" method="post" >
+             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" value="save"> submit</button>
+
+
+            <button type="submit" value="save">submit</button>
         </form>
 
 </body>

@@ -24,7 +24,7 @@ def cohort_form(request):
 
 def native_form(request):
     if request.method == "POST":
-        native = NativeForm(request.POST)
+        native = NativeForm(request.POST, request.FILES)
         if native.is_valid():
             native.save()
             return redirect('native')
