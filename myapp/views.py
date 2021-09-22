@@ -3,10 +3,24 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 from myapp.forms import CohortForm, NativeForm
+from .models import Native
 
 
 def login(self):
     return HttpResponse('this is my login page')
+
+
+def home(request):
+    return render(request, "home.html")
+
+
+def display(request):
+    native = Native.objects.all()
+    print(native)
+    context = {
+        "native": native
+    }
+    return render(request, "display.html", context)
 
 
 def cohort_form(request):

@@ -15,8 +15,18 @@ class Native(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     image = models.ImageField(default="", upload_to="./media/uploads/")
-    cohort = models.OneToOneField(Cohort, on_delete=models.DO_NOTHING)
+    cohort = models.ForeignKey(Cohort, on_delete=models.DO_NOTHING)
     date_added = models.DateTimeField(auto_now_add=True)
 
+    def getSCV(self):
+        scv = f'SCV{Native.pk}0'
+        return scv
+
+
+class Thought(models.Model):
+    text = models.TextField()
+    date_created = models.DateTimeField(auto_now_add=True)
+    native = models.OneToOneField(Native, on_delete=models.DO_NOTHING)
+
     def __str__(self):
-        return self.first_name + " " + self.last_name
+        return
