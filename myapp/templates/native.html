@@ -7,12 +7,14 @@
           integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
 <body>
+    {% block content %}
         <h2>Native Registration</h2>
         <form enctype="multipart/form-data" action="" method="post" >
              {% csrf_token %}
             {{ form.as_p }}
             <button type="submit" value="save">submit</button>
         </form>
+    {% endblock content %}
 
 </body>
 </html>

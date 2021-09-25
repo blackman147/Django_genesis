@@ -7,12 +7,14 @@
           integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
 <body>
+    {% block content %}
         <h2>Cohort Registration</h2>
         <form action="" method="post" >
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit" value="save">submit</button>
         </form>
+    {% endblock content %}
 
 </body>
 </html>

@@ -8,13 +8,15 @@
     <title>Home</title>
 </head>
 <body>
-{% block contents %}
-    <h1>Home</h1>
-    <h2 style="font-family: Roboto, sans-serif; color: coral">Welcome to Cohorts page</h2>
+    {% block contents %}
+        <h1>Home</h1>
+        <h2 style="font-family: Roboto, sans-serif; color: coral">Welcome to Cohorts page</h2>
 
-    <a href="{% url 'create_cohort' %}">Create a cohort</a>
-    <a href="{% url 'create_native' %}">Create a native</a>
-    <a href="{% url 'display' %}">Render all natives</a>
-{% endblock contents %}
+        <a href="{% url 'cohort' %}">Register a cohort</a>
+        <a href="{% url 'native' %}">Register a native</a>
+         <a href="{% url 'thought' %} " >Thoughts on Native</ahref>
+        <a href="{% url 'display' %}">Display all natives</a>
+
+    {% endblock contents %}
 </body>
 </html>

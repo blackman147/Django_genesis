@@ -22,6 +22,9 @@ class Native(models.Model):
         scv = f'SCV{Native.pk}0'
         return scv
 
+    def __str__(self):
+        return self.first_name + " " + self.last_name
+
 
 class Thought(models.Model):
     text = models.TextField()
@@ -29,4 +32,4 @@ class Thought(models.Model):
     native = models.OneToOneField(Native, on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return
+        return self.text[:50]

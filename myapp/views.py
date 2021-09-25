@@ -2,12 +2,8 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from myapp.forms import CohortForm, NativeForm
+from myapp.forms import CohortForm, NativeForm, ThoughtForm
 from .models import Native
-
-
-def login(self):
-    return HttpResponse('this is my login page')
 
 
 def home(request):
@@ -48,3 +44,16 @@ def native_form(request):
     }
 
     return render(request, "native.html", context)
+
+
+def thought_form(request):
+    if request.method == "POST":
+        thought = CohortForm(request.POST)
+        if thought.is_valid():
+            thought.save()
+            return redirect('thought')
+
+    context = {
+        "form": ThoughtForm
+    }
+    return render(request, "thought.html", context)

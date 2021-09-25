@@ -3,12 +3,15 @@ from django.conf.urls.static import static
 from django.urls import path
 from . import views
 
+# app_name = 'myapp'
+
 urlpatterns = [
-    path('', views.login),
+    path('', views.home, name='home'),
     path('create_cohort/', views.cohort_form, name='cohort'),
     path('create_native/', views.native_form, name='native'),
-    path('display/', views.display, name ='display'),
-    path('home/', views.home, name='home')
+    path('thoughts/', views.thought_form, name='thought'),
+    path('display/', views.display, name='display'),
+
 ]
 
 if settings.DEBUG:
